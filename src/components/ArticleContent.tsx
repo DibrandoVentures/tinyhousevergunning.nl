@@ -381,7 +381,7 @@ const ArticleContent = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-destructive/10 rounded-full px-4 py-2 mb-6">
-              <span className="text-sm font-semibold text-destructive">07</span>
+              
               <span className="text-sm text-muted-foreground">Vermijd deze fouten</span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
