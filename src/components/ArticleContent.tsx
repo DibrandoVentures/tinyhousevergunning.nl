@@ -244,7 +244,7 @@ const ArticleContent = () => {
                   <img src={scenario.image} alt={scenario.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
-                  <span className="text-sm font-semibold text-primary">{scenario.number}</span>
+                  
                   <h3 className="font-serif text-xl font-bold mt-2 mb-3">{scenario.title}</h3>
                   <p className="text-muted-foreground mb-4">{scenario.desc}</p>
                   <div className="bg-primary/5 rounded-xl p-4 border border-primary/20">
