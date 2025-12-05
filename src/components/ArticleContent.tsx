@@ -411,7 +411,7 @@ const ArticleContent = () => {
             title: '"Bij gemeente X mocht dit ook"',
             desc: "Elke gemeente maakt eigen afwegingen: jouw gemeente kan streng, coulant of heel specifiek zijn."
           }].map((item, index) => <div key={index} className="flex items-start gap-4 p-6 bg-destructive/5 rounded-2xl border border-destructive/20">
-                <span className="text-sm font-bold text-destructive bg-destructive/10 px-3 py-1 rounded-full">{item.num}</span>
+                
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
                   <p className="text-muted-foreground">{item.desc}</p>
