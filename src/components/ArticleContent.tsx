@@ -15,7 +15,7 @@ const ArticleContent = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-semibold text-primary">01</span>
+                
                 <span className="text-sm text-muted-foreground">Wanneer vergunning?</span>
               </div>
               
