@@ -56,7 +56,7 @@ const ArticleContent = () => {
 
             <div className="relative">
               <img src={tinyErfImage} alt="Tiny house op eigen erf" className="rounded-3xl shadow-2xl w-full h-auto" />
-              <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-2xl shadow-xl border border-border">
+              <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-2xl shadow-xl border border-border pl-[2px] mx-[50px] my-0 mb-0 mt-0">
                 <p className="text-sm text-muted-foreground">Wil je weten wanneer géén vergunning nodig is?</p>
                 <a href="#" className="text-sm font-semibold text-primary hover:underline inline-flex items-center gap-1">
                   tinyhousevergunningsvrij.nl <ExternalLink className="h-3 w-3" />
