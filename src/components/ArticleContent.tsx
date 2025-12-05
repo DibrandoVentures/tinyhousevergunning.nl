@@ -155,7 +155,7 @@ const ArticleContent = () => {
                     <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
-                    <h3 className="font-serif text-xl font-bold">3.1 Ruimtelijke kant: mag het op deze plek?</h3>
+                    <h3 className="font-serif text-xl font-bold">Ruimtelijke kant: mag het op deze plek?</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-13">
                     <li>• Staat je tiny house op grond met een woonbestemming?</li>
