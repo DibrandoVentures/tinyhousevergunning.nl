@@ -7,10 +7,8 @@ import tinyInterieurImage from "@/assets/tiny-interieur.jpg";
 import tinyWheelsCoupleImage from "@/assets/tiny-wheels-couple.jpg";
 import tinyModernDeckImage from "@/assets/tiny-modern-deck.jpg";
 import tinyPergolaImage from "@/assets/tiny-pergola-garden.jpg";
-
 const ArticleContent = () => {
-  return (
-    <article className="pb-16">
+  return <article className="pb-16">
       {/* Section 1 - Wanneer vergunning nodig */}
       <section id="wanneer-vergunning" className="py-20">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -31,30 +29,33 @@ const ArticleContent = () => {
               </p>
 
               <div className="space-y-4">
-                {[
-                  { title: "Tiny house als hoofdwoning", desc: "Je tiny house is je echte woning en je wilt je op dat adres inschrijven." },
-                  { title: "Op een nieuwe of lege kavel", desc: "Je koopt een kavel en plaatst daar een tiny house als nieuwe woning." },
-                  { title: "Meerdere tiny houses op één locatie", desc: "Tiny house-buurtje, park of community met meerdere units." },
-                  { title: "In strijd met de huidige bestemming", desc: "De bestemming is agrarisch, natuur of recreatie maar je wilt permanent wonen." },
-                  { title: "Niet voldoet aan vergunningsvrije grenzen", desc: "Te groot, te hoog of op de verkeerde plek." },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-4 p-4 bg-destructive/5 rounded-xl border border-destructive/20">
+                {[{
+                title: "Tiny house als hoofdwoning",
+                desc: "Je tiny house is je echte woning en je wilt je op dat adres inschrijven."
+              }, {
+                title: "Op een nieuwe of lege kavel",
+                desc: "Je koopt een kavel en plaatst daar een tiny house als nieuwe woning."
+              }, {
+                title: "Meerdere tiny houses op één locatie",
+                desc: "Tiny house-buurtje, park of community met meerdere units."
+              }, {
+                title: "In strijd met de huidige bestemming",
+                desc: "De bestemming is agrarisch, natuur of recreatie maar je wilt permanent wonen."
+              }, {
+                title: "Niet voldoet aan vergunningsvrije grenzen",
+                desc: "Te groot, te hoog of op de verkeerde plek."
+              }].map((item, index) => <div key={index} className="flex items-start gap-4 p-4 bg-destructive/5 rounded-xl border border-destructive/20">
                     <XCircle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-foreground">{item.title}</h4>
                       <p className="text-sm text-muted-foreground">{item.desc}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
             <div className="relative">
-              <img 
-                src={tinyErfImage} 
-                alt="Tiny house op eigen erf" 
-                className="rounded-3xl shadow-2xl w-full h-auto" 
-              />
+              <img src={tinyErfImage} alt="Tiny house op eigen erf" className="rounded-3xl shadow-2xl w-full h-auto" />
               <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-2xl shadow-xl border border-border">
                 <p className="text-sm text-muted-foreground">Wil je weten wanneer géén vergunning nodig is?</p>
                 <a href="#" className="text-sm font-semibold text-primary hover:underline inline-flex items-center gap-1">
@@ -177,7 +178,7 @@ const ArticleContent = () => {
                     <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center">
                       <Scale className="h-5 w-5 text-accent" />
                     </div>
-                    <h3 className="font-serif text-xl font-bold">3.2 Bouwtechnische kant: is het veilig?</h3>
+                    <h3 className="font-serif text-xl font-bold"> Bouwtechnische kant: is het veilig?</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-13">
                     <li>• Constructief veilig</li>
@@ -193,16 +194,8 @@ const ArticleContent = () => {
             </div>
 
             <div className="lg:col-span-2 space-y-6">
-              <img 
-                src={tinyInterieurImage} 
-                alt="Tiny house interieur" 
-                className="rounded-2xl shadow-lg w-full h-auto" 
-              />
-              <img 
-                src={tinyModernDeckImage} 
-                alt="Modern tiny house met terras" 
-                className="rounded-2xl shadow-lg w-full h-auto" 
-              />
+              <img src={tinyInterieurImage} alt="Tiny house interieur" className="rounded-2xl shadow-lg w-full h-auto" />
+              <img src={tinyModernDeckImage} alt="Modern tiny house met terras" className="rounded-2xl shadow-lg w-full h-auto" />
             </div>
           </div>
         </div>
@@ -222,37 +215,31 @@ const ArticleContent = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                number: "4.1",
-                title: "Eén tiny house als hoofdwoning op eigen grond",
-                image: tinyErfImage,
-                desc: "Je koopt een kavel en wilt daar één tiny house neerzetten waarin je permanent gaat wonen.",
-                conclusion: "Vrijwel altijd een volwaardige omgevingsvergunning nodig (ruimtelijk + bouwtechnisch)."
-              },
-              {
-                number: "4.2", 
-                title: "Klein tiny house achter je woning om in te wonen",
-                image: tinyPergolaImage,
-                desc: "Je zet een tiny house achter je huidige huis en gaat er fulltime in wonen.",
-                conclusion: "Grote kans dat het vergunningplichtig is, ook als het bouwkundig 'vergunningsvrij' lijkt."
-              },
-              {
-                number: "4.3",
-                title: "Tiny house-buurtje / project",
-                image: tinyCommunityImage,
-                desc: "Meerdere tiny houses op één terrein, eventueel met gedeelde faciliteiten.",
-                conclusion: "Altijd vergunningsplichtig met extra zaken: participatie, verkeer, groen, water."
-              },
-              {
-                number: "4.4",
-                title: "Tiny house op recreatiebestemming",
-                image: tinyWheelsCoupleImage,
-                desc: "Je plaatst een tiny house op een recreatiepark of grond met recreatiebestemming.",
-                conclusion: "Voor permanente bewoning is een vergunningtraject nodig."
-              }
-            ].map((scenario, index) => (
-              <div key={index} className="bg-card rounded-3xl overflow-hidden shadow-lg border border-border/50">
+            {[{
+            number: "4.1",
+            title: "Eén tiny house als hoofdwoning op eigen grond",
+            image: tinyErfImage,
+            desc: "Je koopt een kavel en wilt daar één tiny house neerzetten waarin je permanent gaat wonen.",
+            conclusion: "Vrijwel altijd een volwaardige omgevingsvergunning nodig (ruimtelijk + bouwtechnisch)."
+          }, {
+            number: "4.2",
+            title: "Klein tiny house achter je woning om in te wonen",
+            image: tinyPergolaImage,
+            desc: "Je zet een tiny house achter je huidige huis en gaat er fulltime in wonen.",
+            conclusion: "Grote kans dat het vergunningplichtig is, ook als het bouwkundig 'vergunningsvrij' lijkt."
+          }, {
+            number: "4.3",
+            title: "Tiny house-buurtje / project",
+            image: tinyCommunityImage,
+            desc: "Meerdere tiny houses op één terrein, eventueel met gedeelde faciliteiten.",
+            conclusion: "Altijd vergunningsplichtig met extra zaken: participatie, verkeer, groen, water."
+          }, {
+            number: "4.4",
+            title: "Tiny house op recreatiebestemming",
+            image: tinyWheelsCoupleImage,
+            desc: "Je plaatst een tiny house op een recreatiepark of grond met recreatiebestemming.",
+            conclusion: "Voor permanente bewoning is een vergunningtraject nodig."
+          }].map((scenario, index) => <div key={index} className="bg-card rounded-3xl overflow-hidden shadow-lg border border-border/50">
                 <div className="aspect-video overflow-hidden">
                   <img src={scenario.image} alt={scenario.title} className="w-full h-full object-cover" />
                 </div>
@@ -266,8 +253,7 @@ const ArticleContent = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -355,22 +341,37 @@ const ArticleContent = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { step: 1, title: "Jouw plan scherp krijgen", content: "Is het 1 tiny house of meerdere? Tijdelijk of permanent? Op welke locatie? Wat is het doel?" },
-              { step: 2, title: "Bestemming & regels checken", content: "Zoek de huidige bestemming op. Kijk of er al tiny house-beleid is in jouw gemeente." },
-              { step: 3, title: "Vergunningsvrij vs. plichtig bepalen", content: "Check of jouw plan in de buurt komt van vergunningsvrij bouwen. Twijfel? Behandel als vergunningsplichtig." },
-              { step: 4, title: "Vooroverleg met de gemeente", content: "Leg je idee, schetsen en globale opzet voor. De gemeente geeft aan of jouw locatie kansrijk is." },
-              { step: 5, title: "Aanvraag voorbereiden", content: "Plattegronden, situatietekening, omschrijving gebruik, onderbouwing en bouwkundige info." },
-              { step: 6, title: "Vergunning aanvragen", content: "Dien je aanvraag in via het Omgevingsloket. Houd rekening met doorlooptijd en eventuele bezwaren." },
-            ].map((item) => (
-              <div key={item.step} className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
+            {[{
+            step: 1,
+            title: "Jouw plan scherp krijgen",
+            content: "Is het 1 tiny house of meerdere? Tijdelijk of permanent? Op welke locatie? Wat is het doel?"
+          }, {
+            step: 2,
+            title: "Bestemming & regels checken",
+            content: "Zoek de huidige bestemming op. Kijk of er al tiny house-beleid is in jouw gemeente."
+          }, {
+            step: 3,
+            title: "Vergunningsvrij vs. plichtig bepalen",
+            content: "Check of jouw plan in de buurt komt van vergunningsvrij bouwen. Twijfel? Behandel als vergunningsplichtig."
+          }, {
+            step: 4,
+            title: "Vooroverleg met de gemeente",
+            content: "Leg je idee, schetsen en globale opzet voor. De gemeente geeft aan of jouw locatie kansrijk is."
+          }, {
+            step: 5,
+            title: "Aanvraag voorbereiden",
+            content: "Plattegronden, situatietekening, omschrijving gebruik, onderbouwing en bouwkundige info."
+          }, {
+            step: 6,
+            title: "Vergunning aanvragen",
+            content: "Dien je aanvraag in via het Omgevingsloket. Houd rekening met doorlooptijd en eventuele bezwaren."
+          }].map(item => <div key={item.step} className="bg-card rounded-2xl p-6 shadow-lg border border-border/50">
                 <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-primary-foreground font-bold text-xl mb-4">
                   {item.step}
                 </div>
                 <h3 className="font-serif text-lg font-bold mb-3">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.content}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -389,41 +390,33 @@ const ArticleContent = () => {
           </div>
 
           <div className="space-y-4 max-w-4xl mx-auto">
-            {[
-              { 
-                num: "7.1", 
-                title: '"Eerst neerzetten, daarna wel zien"', 
-                desc: "Risico: handhaving, dwangsommen en in het uiterste geval een sloop- of verwijderingsbevel." 
-              },
-              { 
-                num: "7.2", 
-                title: 'Tiny house als "schuurtje" vermommen', 
-                desc: "Een volwaardig mini-huis presenteren als simpel bijgebouw. Als gemeente of buren dit ontdekken, verdwijnt vertrouwen direct." 
-              },
-              { 
-                num: "7.3", 
-                title: "Geen rekening houden met buren", 
-                desc: "Geen aandacht voor inkijk, schaduw, parkeren of aanrijroutes. Buren worden verrast bij de officiële procedure." 
-              },
-              { 
-                num: "7.4", 
-                title: "Te laat starten met de gemeente", 
-                desc: "Je ontwerpt alles met een bouwer en komt pas bij de gemeente als alles vast ligt. Risico: kostbare wijzigingen." 
-              },
-              { 
-                num: "7.5", 
-                title: '"Bij gemeente X mocht dit ook"', 
-                desc: "Elke gemeente maakt eigen afwegingen: jouw gemeente kan streng, coulant of heel specifiek zijn." 
-              },
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 bg-destructive/5 rounded-2xl border border-destructive/20">
+            {[{
+            num: "7.1",
+            title: '"Eerst neerzetten, daarna wel zien"',
+            desc: "Risico: handhaving, dwangsommen en in het uiterste geval een sloop- of verwijderingsbevel."
+          }, {
+            num: "7.2",
+            title: 'Tiny house als "schuurtje" vermommen',
+            desc: "Een volwaardig mini-huis presenteren als simpel bijgebouw. Als gemeente of buren dit ontdekken, verdwijnt vertrouwen direct."
+          }, {
+            num: "7.3",
+            title: "Geen rekening houden met buren",
+            desc: "Geen aandacht voor inkijk, schaduw, parkeren of aanrijroutes. Buren worden verrast bij de officiële procedure."
+          }, {
+            num: "7.4",
+            title: "Te laat starten met de gemeente",
+            desc: "Je ontwerpt alles met een bouwer en komt pas bij de gemeente als alles vast ligt. Risico: kostbare wijzigingen."
+          }, {
+            num: "7.5",
+            title: '"Bij gemeente X mocht dit ook"',
+            desc: "Elke gemeente maakt eigen afwegingen: jouw gemeente kan streng, coulant of heel specifiek zijn."
+          }].map((item, index) => <div key={index} className="flex items-start gap-4 p-6 bg-destructive/5 rounded-2xl border border-destructive/20">
                 <span className="text-sm font-bold text-destructive bg-destructive/10 px-3 py-1 rounded-full">{item.num}</span>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
                   <p className="text-muted-foreground">{item.desc}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -442,20 +435,31 @@ const ArticleContent = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {[
-              { q: "Heb ik altijd een vergunning nodig voor een tiny house?", a: "Nee, niet altijd. Als je tiny house juridisch als bijgebouw telt en binnen de vergunningsvrije regels valt, is een vergunning soms niet nodig. Maar zodra het om een woning gaat, moet je er in de praktijk van uitgaan dat je wel een vergunning nodig hebt." },
-              { q: "Hoe weet ik zeker of mijn plan vergunningsplichtig is?", a: "Vergelijk je plan met de vergunningsvrije voorwaarden, doe de vergunningcheck in het Omgevingsloket, of laat je plan beoordelen door je gemeente of een adviseur." },
-              { q: "Hoelang duurt het vergunningstraject?", a: "De standaardprocedure duurt meestal enkele weken, maar bij complexe plannen kan het langer duren door extra onderzoek, overleg en eventuele bezwaren." },
-              { q: "Kan ik een tijdelijke vergunning krijgen?", a: "Dat kan. Veel gemeenten werken met tijdelijke vergunningen voor tiny houses, bijvoorbeeld voor 10–15 jaar." },
-              { q: "Moet mijn tiny house hetzelfde niveau hebben als nieuwbouw?", a: "Je moet rekening houden met eisen rond veiligheid, gezondheid, brandveiligheid en energie. Soms is er ruimte voor maatwerk bij tijdelijke projecten." },
-              { q: "Wat als de gemeente mijn plan afwijst?", a: "Je kunt het plan aanpassen, bezwaar maken tegen het besluit, of onderzoeken of een andere locatie of constructie kansrijker is." },
-              { q: "Waar kan ik meer lezen over de regels?", a: "Op tinyhouseregelgeving.nl vind je een overzicht van de regels en begrippen. Op tinyhousebestemmingsplan.nl alles over locatie en plannen." },
-            ].map((item, index) => (
-              <div key={index} className="bg-card rounded-2xl p-6 shadow-sm border border-border/50">
+            {[{
+            q: "Heb ik altijd een vergunning nodig voor een tiny house?",
+            a: "Nee, niet altijd. Als je tiny house juridisch als bijgebouw telt en binnen de vergunningsvrije regels valt, is een vergunning soms niet nodig. Maar zodra het om een woning gaat, moet je er in de praktijk van uitgaan dat je wel een vergunning nodig hebt."
+          }, {
+            q: "Hoe weet ik zeker of mijn plan vergunningsplichtig is?",
+            a: "Vergelijk je plan met de vergunningsvrije voorwaarden, doe de vergunningcheck in het Omgevingsloket, of laat je plan beoordelen door je gemeente of een adviseur."
+          }, {
+            q: "Hoelang duurt het vergunningstraject?",
+            a: "De standaardprocedure duurt meestal enkele weken, maar bij complexe plannen kan het langer duren door extra onderzoek, overleg en eventuele bezwaren."
+          }, {
+            q: "Kan ik een tijdelijke vergunning krijgen?",
+            a: "Dat kan. Veel gemeenten werken met tijdelijke vergunningen voor tiny houses, bijvoorbeeld voor 10–15 jaar."
+          }, {
+            q: "Moet mijn tiny house hetzelfde niveau hebben als nieuwbouw?",
+            a: "Je moet rekening houden met eisen rond veiligheid, gezondheid, brandveiligheid en energie. Soms is er ruimte voor maatwerk bij tijdelijke projecten."
+          }, {
+            q: "Wat als de gemeente mijn plan afwijst?",
+            a: "Je kunt het plan aanpassen, bezwaar maken tegen het besluit, of onderzoeken of een andere locatie of constructie kansrijker is."
+          }, {
+            q: "Waar kan ik meer lezen over de regels?",
+            a: "Op tinyhouseregelgeving.nl vind je een overzicht van de regels en begrippen. Op tinyhousebestemmingsplan.nl alles over locatie en plannen."
+          }].map((item, index) => <div key={index} className="bg-card rounded-2xl p-6 shadow-sm border border-border/50">
                 <h4 className="font-semibold text-foreground mb-3">{item.q}</h4>
                 <p className="text-sm text-muted-foreground">{item.a}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -471,21 +475,22 @@ const ArticleContent = () => {
               Een tiny house bouwen of plaatsen begint niet met hout en schroeven, maar met een plan dat binnen de regels past.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { name: "tinyhouseregelgeving.nl", desc: "Regels & begrippen" },
-                { name: "tinyhousevergunningsvrij.nl", desc: "Wanneer zonder vergunning" },
-                { name: "tinyhousebestemmingsplan.nl", desc: "Locatie & bestemmingskeuze" },
-                { name: "tinyhousescompleet.nl", desc: "Types, voorbeelden & kosten" },
-              ].map((link) => (
-                <a
-                  key={link.name}
-                  href="#"
-                  className="bg-primary-foreground/10 hover:bg-primary-foreground/20 backdrop-blur-sm px-6 py-3 rounded-xl transition-colors"
-                >
+              {[{
+              name: "tinyhouseregelgeving.nl",
+              desc: "Regels & begrippen"
+            }, {
+              name: "tinyhousevergunningsvrij.nl",
+              desc: "Wanneer zonder vergunning"
+            }, {
+              name: "tinyhousebestemmingsplan.nl",
+              desc: "Locatie & bestemmingskeuze"
+            }, {
+              name: "tinyhousescompleet.nl",
+              desc: "Types, voorbeelden & kosten"
+            }].map(link => <a key={link.name} href="#" className="bg-primary-foreground/10 hover:bg-primary-foreground/20 backdrop-blur-sm px-6 py-3 rounded-xl transition-colors">
                   <span className="font-semibold block">{link.name}</span>
                   <span className="text-sm text-primary-foreground/70">{link.desc}</span>
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
         </div>
@@ -504,8 +509,6 @@ const ArticleContent = () => {
           </div>
         </div>
       </section>
-    </article>
-  );
+    </article>;
 };
-
 export default ArticleContent;
