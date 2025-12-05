@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import tinySolarPanels from "@/assets/tiny-solar-panels.png";
+import { ArrowDown, FileCheck } from "lucide-react";
+import tinyHouseHero from "@/assets/tiny-house-hero.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -13,47 +13,65 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-primary overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${tinyHouseHero})` }}
+      />
       
-      <div className="container relative z-10 mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-primary-foreground">
-            <p className="text-sm uppercase tracking-wider text-primary-foreground/70 mb-2">
-              Actueel tot eind 2025
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Tiny house 2026: nieuwe regels op eigen erf
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 leading-relaxed">
-              Vanaf 2026 komt er meer ruimte voor tiny houses op eigen erf. Met de Wet versterking regie volkshuisvesting 
-              wil de overheid het makkelijker maken om vergunningsvrij een mantelzorg- of familiewoning te plaatsen.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                onClick={() => scrollToSection("artikel")} 
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg"
-              >
-                Lees de volledige gids
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-foreground/80" />
+      
+      {/* Content */}
+      <div className="container relative z-10 mx-auto px-4 py-32 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-8">
+            <FileCheck className="h-4 w-4 text-primary-foreground" />
+            <span className="text-sm font-medium text-primary-foreground">Vergunningsgids voor tiny houses</span>
+          </div>
+          
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
+            Tiny house vergunning: wanneer nodig en hoe regel je het slim?
+          </h1>
+          
+          <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Niet elk tiny house is vergunningsvrij. Zeker als je er écht in wilt wonen, een nieuw huis op een kavel wilt plaatsen 
+            of meerdere tiny houses op één terrein wilt neerzetten, kom je bijna altijd uit bij een vergunningstraject.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button 
+              size="lg" 
+              onClick={() => scrollToSection("artikel")} 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl px-8"
+            >
+              Lees de volledige gids
+              <ArrowDown className="ml-2 h-5 w-5" />
+            </Button>
           </div>
 
-          <div className="hidden md:block">
-            <img 
-              src={tinySolarPanels} 
-              alt="Moderne tiny house met zonnepanelen in groene omgeving" 
-              className="rounded-3xl shadow-2xl w-full h-auto" 
-            />
+          {/* Quick stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+            {[
+              { label: "Stappenplan", value: "6 stappen" },
+              { label: "Scenario's", value: "4 types" },
+              { label: "FAQ's", value: "7 vragen" },
+              { label: "Fouten vermijden", value: "5 tips" },
+            ].map((stat, index) => (
+              <div key={index} className="bg-background/10 backdrop-blur-sm rounded-xl p-4 border border-primary-foreground/20">
+                <p className="text-2xl font-bold text-primary-foreground">{stat.value}</p>
+                <p className="text-sm text-primary-foreground/70">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="h-12 bg-background rounded-t-[3rem] relative z-10"></div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <ArrowDown className="h-6 w-6 text-primary-foreground/60" />
+      </div>
     </section>
   );
 };
