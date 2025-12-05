@@ -141,7 +141,7 @@ const ArticleContent = () => {
           <div className="grid lg:grid-cols-5 gap-12 items-start">
             <div className="lg:col-span-3">
               <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-semibold text-primary">03</span>
+                
                 <span className="text-sm text-muted-foreground">Twee lagen</span>
               </div>
 
